@@ -177,145 +177,116 @@ $totalPrice = $totalPriceResult['total_price'];
     </header>
 
 
-    <footer class="bg-white">
-        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-            <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Home
+    <div class="col-span-12 mt-5 ">
+        <div class="grid gap-2 grid-cols-1 lg:grid-cols-1">
+            <div class="bg-white p-4 shadow-lg rounded-lg ">
+                <div class="flex justify-between ">
+                    <h1 class="font-bold text-base">My Cart</h1>
+                    <a href="addPlante.php" class="transition duration-300 hover:scale-150">
+                        <i class="bi bi-plus-circle "></i>
                     </a>
                 </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Products
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Panier
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Contact
-                    </a>
-                </div>
+                <div class="mt-4">
+                    <div class="flex flex-col">
+                        <div class="-my-2 overflow-x-auto">
+                            <div class="py-2 align-middle inline-block min-w-full">
+                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg bg-white">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    <div class="flex cursor-pointer">
+                                                        <span class="mr-2">Plante img</span>
+                                                    </div>
+                                                </th>
+                                                <th
+                                                    class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    <div class="flex cursor-pointer">
+                                                        <span class="mr-2">Plante NAME</span>
+                                                    </div>
+                                                </th>
+                                                <th
+                                                    class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    <div class="flex cursor-pointer">
+                                                        <span class="mr-2">Price</span>
+                                                    </div>
+                                                </th>
+                                                <th
+                                                    class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    <div class="flex cursor-pointer">
+                                                        <span class="mr-2">ACTION</span>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
 
-            </nav>
-
-
-
-            <div class="col-span-12 mt-5 ">
-                <div class="grid gap-2 grid-cols-1 lg:grid-cols-1">
-                    <div class="bg-white p-4 shadow-lg rounded-lg ">
-                        <div class="flex justify-between ">
-                            <h1 class="font-bold text-base">My Cart</h1>
-                            <a href="addPlante.php" class="transition duration-300 hover:scale-150">
-                                <i class="bi bi-plus-circle "></i>
-                            </a>
-                        </div>
-                        <div class="mt-4">
-                            <div class="flex flex-col">
-                                <div class="-my-2 overflow-x-auto">
-                                    <div class="py-2 align-middle inline-block min-w-full">
-                                        <div
-                                            class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg bg-white">
-                                            <table class="min-w-full divide-y divide-gray-200">
-                                                <thead>
-                                                    <tr>
-                                                        <th
-                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                            <div class="flex cursor-pointer">
-                                                                <span class="mr-2">Plante img</span>
-                                                            </div>
-                                                        </th>
-                                                        <th
-                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                            <div class="flex cursor-pointer">
-                                                                <span class="mr-2">Plante NAME</span>
-                                                            </div>
-                                                        </th>
-                                                        <th
-                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                            <div class="flex cursor-pointer">
-                                                                <span class="mr-2">Price</span>
-                                                            </div>
-                                                        </th>
-                                                        <th
-                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                            <div class="flex cursor-pointer">
-                                                                <span class="mr-2">ACTION</span>
-                                                            </div>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody class="bg-white divide-y divide-gray-200">
-                                                    <?php
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <?php
                                                 foreach ($cartItems as $cartItem) { ?>
-                                                    <tr>
-                                                        <td class="w-9">
-                                                            <img src="<?php echo $cartItem['plant_image']; ?>"
-                                                                alt="Plant Image">
-                                                        </td>
-                                                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                            <p><?php echo $cartItem['plant_name']; ?></p>
-                                                        </td>
-                                                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                            <div class="flex text-[#685942]">
-                                                                <p><?php echo $cartItem['plant_price']; ?>
-                                                                    DH</p>
-                                                            </div>
-                                                        </td>
-                                                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                            <div class="flex space-x-4">
+                                            <tr>
+                                                <td class="w-9">
+                                                    <img src="<?php echo $cartItem['plant_image']; ?>"
+                                                        alt="Plant Image">
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                    <p><?php echo $cartItem['plant_name']; ?></p>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                    <div class="flex text-[#685942]">
+                                                        <p><?php echo $cartItem['plant_price']; ?>
+                                                            DH</p>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                    <div class="flex space-x-4">
 
-                                                                <form action="" method="POST">
-                                                                    <input type="hidden" name="idplant"
-                                                                        value="<?php echo $cartItem['plant_id']; ?>">
-                                                                    <button type="submit" name="deletePlant"
-                                                                        class="text-red-500 hover:text-red-600">
+                                                        <form action="" method="POST">
+                                                            <input type="hidden" name="idplant"
+                                                                value="<?php echo $cartItem['plant_id']; ?>">
+                                                            <button type="submit" name="deletePlant"
+                                                                class="text-red-500 hover:text-red-600">
 
-                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                            class="w-5 h-5 mr-1 ml-3" fill="none"
-                                                                            viewBox="0 0 24 24" stroke="currentColor">
-                                                                            <path stroke-linecap="round"
-                                                                                stroke-linejoin="round" stroke-width="2"
-                                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                                        </svg>
-                                                                        <p>Delete</p>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <?php
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="w-5 h-5 mr-1 ml-3" fill="none"
+                                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2"
+                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                                </svg>
+                                                                <p>Delete</p>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php
                                                             }
                                                             ?>
 
-                                                </tbody>
+                                        </tbody>
 
 
-                                            </table>
+                                    </table>
+                                </div>
+
+
+
+
+                                <div class="flex w-[100%] ">
+
+                                    <div
+                                        class="px-6 py-3 w-[50%] bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <div class="flex cursor-pointer">
+                                            <p class="mr-2 text-2xl">Total&nbsp;Price&nbsp;:&nbsp;<span
+                                                    class="text-2xl font-bold"><?php echo $totalPrice; ?>DH</span>
+                                            </p>
                                         </div>
-
-
-
-
-                                        <div class="flex w-[100%] ">
-
-                                            <div
-                                                class="px-6 py-3 w-[50%] bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                <div class="flex cursor-pointer">
-                                                    <p class="mr-2 text-2xl">Total&nbsp;Price&nbsp;:&nbsp;<span
-                                                            class="text-2xl font-bold"><?php echo $totalPrice; ?>DH</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="px-6 w-[50%]  py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                <div class="flex  float-right">
-                                                    <?php
+                                    </div>
+                                    <div
+                                        class="px-6 w-[50%]  py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <div class="flex  float-right">
+                                            <?php
                                                     if($cartCount > 0){
                                                     echo " <form  method='POST'>
                                                     <button type='submit' name='checkout' class='bg-purple-400 px-[1rem] py-[.5rem] rounded rounded-1xl text-white hover:bg-purple-600 duration-500 cursor-pointer text-2xl font-bold'>Checkout</button>
@@ -324,8 +295,6 @@ $totalPrice = $totalPriceResult['total_price'];
                                                     echo "";
                                                     }
                                                     ?>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -334,12 +303,30 @@ $totalPrice = $totalPriceResult['total_price'];
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
+    <footer class="bg-white">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+            <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+            <ul class="flex items-center">
+                <li
+                    class="p-4 border-b-2 border-purple-700  border-opacity-0 hover:border-opacity-100 hover:text-purple-700  duration-200 cursor-pointer active">
+                    <a href="index.php">Home</a>
+                </li>
+                <li
+                    class="p-4 border-b-2 border-purple-700  border-opacity-0 hover:border-opacity-100 hover:text-purple-700  duration-200 cursor-pointer">
+                    <a href="Plants.php">Plants</a>
+                </li>
+                <li
+                    class="p-4 border-b-2 border-purple-700  border-opacity-0 hover:border-opacity-100 hover:text-purple-700  duration-200 cursor-pointer">
+                    <a href="Cart.php">Cart</a>
+                </li>
 
+            </ul>
 
-
-
+            </nav>
             <div class="flex justify-center mt-8 space-x-6">
                 <a href="#" class="text-gray-400 hover:text-purple-700">
                     <span class="sr-only">Facebook</span>
@@ -392,7 +379,7 @@ $totalPrice = $totalPriceResult['total_price'];
         function displaySuccessMessage() {
             console.log("Command added successfully!");
             alert("Command added successfully!");
-           
+
         }
     </script>
 

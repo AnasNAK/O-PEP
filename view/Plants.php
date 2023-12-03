@@ -280,26 +280,21 @@ $cartCount = $countStatement->fetch(PDO::FETCH_ASSOC)['cartCount'] ?? 0;
     <footer class="bg-white">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Home
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Products
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Panier
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-purple-700">
-                        Contact
-                    </a>
-                </div>
+            <ul class="flex items-center">
+                <li
+                    class="p-4 border-b-2 border-purple-700  border-opacity-0 hover:border-opacity-100 hover:text-purple-700  duration-200 cursor-pointer active">
+                    <a href="index.php">Home</a>
+                </li>
+                <li
+                    class="p-4 border-b-2 border-purple-700  border-opacity-0 hover:border-opacity-100 hover:text-purple-700  duration-200 cursor-pointer">
+                    <a href="Plants.php">Plants</a>
+                </li>
+                <li
+                    class="p-4 border-b-2 border-purple-700  border-opacity-0 hover:border-opacity-100 hover:text-purple-700  duration-200 cursor-pointer">
+                    <a href="Cart.php">Cart</a>
+                </li>
+
+            </ul>
 
             </nav>
             <div class="flex justify-center mt-8 space-x-6">
